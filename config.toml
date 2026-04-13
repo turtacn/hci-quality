@@ -1,0 +1,15 @@
+# OpenHands 配置,MVP 一阶段不启用,保留到二阶段 Linux 节点即时切换
+
+[core]
+workspace_base = "D:\\opt-hci-quality\\mvp\\repos\\demo"
+cache_dir = "D:\\opt-hci-quality\\mvp\\.cache\\openhands"
+
+[sandbox]
+runtime = "local"
+use_host_network = true
+
+[llm]
+model = "openai/claude-sonnet-4-6"
+base_url = "https://internal-llm-gateway.example.com/v1"
+temperature = 0.1
+max_output_tokens = 8192

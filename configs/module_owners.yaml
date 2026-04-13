@@ -1,0 +1,15 @@
+# 模块与责任人映射,用于评估退化告警与 TD 评论抄送
+modules:
+  HCI-VCLS:
+    lead: vcls-lead@example.com
+    backup: vcls-backup@example.com
+  HCI-Storage:
+    lead: storage-lead@example.com
+  HCI-Network:
+    lead: net-lead@example.com
+  HCI-Compute:
+    lead: compute-lead@example.com
+  HCI-Mgmt:
+    lead: mgmt-lead@example.com
+  Unknown:
+    lead: quality-team@example.com

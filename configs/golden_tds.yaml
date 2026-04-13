@@ -1,0 +1,21 @@
+# 由 hci_quality.eval.golden_tds_mine 自动生成
+# 请勿手工编辑,除非用于单元测试的 fixture
+# 格式:
+#   <td_id>:
+#     canonical: <canonical_name>
+#     qnames:
+#       - lang: <perl|go|python|java|c>
+#         qname: <fully qualified name>
+#     commit: <git sha>
+#     mined_at: <ISO 8601>
+
+# --- 示例条目,仅用于 pytest fixture ---
+# TD-EXAMPLE-001:
+#   canonical: network.dhcp.renew
+#   qnames:
+#     - lang: perl
+#       qname: Net::DHCP::renew
+#     - lang: go
+#       qname: github.com/hci/net.(*DHCP).Renew
+#   commit: 0000000000000000000000000000000000000000
+#   mined_at: 2026-01-01T00:00:00Z

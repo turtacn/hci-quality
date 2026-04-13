@@ -1,0 +1,62 @@
+[project]
+name = "hci-quality"
+version = "0.1.0"
+description = "Knowledge-driven defect resolution loop for HCI"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "VT Quality Team" },
+]
+
+dependencies = [
+    "lightrag-hku>=1.0.0",
+    "sentence-transformers>=3.0",
+    "torch>=2.4",
+    "transformers>=4.45",
+    "kuzu>=0.6.0",
+    "tree-sitter>=0.23",
+    "tree-sitter-languages>=1.10",
+    "drain3>=0.9",
+    "arize-phoenix>=6.0",
+    "arize-phoenix-otel>=0.6",
+    "openinference-instrumentation-openai>=0.1",
+    "opentelemetry-sdk>=1.27",
+    "opentelemetry-exporter-otlp>=1.27",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "httpx>=0.27",
+    "pydantic>=2.9",
+    "mcp>=1.0",
+    "pyyaml>=6.0",
+    "click>=8.1",
+    "rich>=13.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.7",
+    "mypy>=1.11",
+]
+
+[project.scripts]
+hciq-ingest = "hci_quality.ingest.td_normalize:cli"
+hciq-build-graph = "hci_quality.graph.kuzu_build:cli"
+hciq-eval = "hci_quality.eval.eval_join:cli"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hci_quality"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py313"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

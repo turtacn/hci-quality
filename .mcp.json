@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "lightrag": {
+      "command": "D:\\opt-hci-quality\\mvp\\venv\\Scripts\\python.exe",
+      "args": ["D:\\opt-hci-quality\\mvp\\mcp\\lightrag_server.py"],
+      "env": {
+        "HCI_PROJECT_ROOT": "D:\\opt-hci-quality\\mvp"
+      }
+    },
+    "codegraph": {
+      "command": "D:\\opt-hci-quality\\mvp\\venv\\Scripts\\python.exe",
+      "args": ["D:\\opt-hci-quality\\mvp\\mcp\\kuzu_server.py"],
+      "env": {
+        "HCI_PROJECT_ROOT": "D:\\opt-hci-quality\\mvp"
+      }
+    },
+    "td": {
+      "command": "D:\\opt-hci-quality\\mvp\\venv\\Scripts\\python.exe",
+      "args": ["D:\\opt-hci-quality\\mvp\\mcp\\td_server.py"],
+      "env": {
+        "HCI_PROJECT_ROOT": "D:\\opt-hci-quality\\mvp"
+      }
+    }
+  }
+}

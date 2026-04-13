@@ -1,0 +1,26 @@
+# 客户语言到工程实体归一字典
+# 由 SymbolRegistry 作为补充层消费,优先于自动解析结果
+# 格式:
+#   - canonical: <canonical_name>
+#     aliases: [<客户语言>, <同义词>, ...]
+#     owner_module: <HCI-VCLS|HCI-Storage|HCI-Network|HCI-Compute|HCI-Mgmt>
+
+- canonical: cluster_vcls_heartbeat
+  aliases: [客户机蓝屏, 心跳丢失, VCLS 失联, HA agent down, vcls heartbeat timeout]
+  owner_module: HCI-VCLS
+
+- canonical: network_dhcp_renew
+  aliases: [DHCP 超时, 地址续约失败, dhcp renew fail, no lease]
+  owner_module: HCI-Network
+
+- canonical: storage_iscsi_login_fail
+  aliases: [存储挂载失败, iSCSI 登录失败, lun 不可见, iscsi login timeout]
+  owner_module: HCI-Storage
+
+- canonical: compute_vm_start_fail
+  aliases: [虚拟机启动失败, vm boot fail, domain start error]
+  owner_module: HCI-Compute
+
+- canonical: mgmt_ui_login_timeout
+  aliases: [管理页打不开, UI 登录卡死, web console timeout]
+  owner_module: HCI-Mgmt
