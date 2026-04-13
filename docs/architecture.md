@@ -281,7 +281,7 @@ subagent 被训练为读 hint 做下一步决策,错误不穿透为异常。
 
 ### 5.8 观测与评估层
 
-- Phoenix OTLP HTTP endpoint http://localhost:6006/v1/traces,SQLite 位于 traces/phoenix.sqlite。
+- Phoenix OTLP HTTP endpoint http://localhost:6006/v1/traces, SQLite 位于 traces/phoenix.sqlite。
 - eval_join 读 golden_tds.yaml 与 Phoenix span,输出 hit@1、hit@5、MRR 并按语言对拆分。
 - golden_tds_mine 扫 git log,匹配 commit message 中 TD-XXXX 正则,交集 tree-sitter 函数区间得出 `{td_id: [qname,...]}`。
 

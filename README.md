@@ -193,4 +193,4 @@ pwsh -File scripts\99_e2e_smoke.ps1
 
 ## 六、许可证与维护
 
-Apache-2.0。由 VT 质量组架构规划与 AI 能力线维护。
+Apache-2.0。
