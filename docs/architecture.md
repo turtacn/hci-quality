@@ -19,7 +19,7 @@
 
 系统按七层划分,层间耦合以接口契约为准。
 
-```mermaid
+```text
 graph TB
     %% 图例置顶
     subgraph LEGEND[图例（Legend）]
@@ -102,7 +102,7 @@ graph TB
 
 目标机为一台 Windows 10 物理机,所有组件均在同一主机内以进程形态运行。Phoenix、webhook、Claude CLI 子进程、MCP server 之间通过本机 loopback 与 stdio 互通,不依赖任何容器或虚拟化。
 
-```mermaid
+```text
 graph TB
     subgraph Host[Windows 10主机（D:盘根 D slash opt-hci-quality slash mvp）]
         subgraph Daemons[常驻进程]
@@ -157,7 +157,7 @@ graph TB
 
 ### 4.1 批量摄取(日级,离线)
 
-```mermaid
+```text
 flowchart LR
     A[TD/iCare导出JSONL] --> B[客户术语归一化]
     B --> C[Drain3多语言日志模板]
@@ -178,7 +178,7 @@ flowchart LR
 
 ### 4.2 在线触发(事件级,秒级)
 
-```mermaid
+```text
 sequenceDiagram
     autonumber
     participant TD as TD/iCare
@@ -281,7 +281,7 @@ subagent 被训练为读 hint 做下一步决策,错误不穿透为异常。
 
 ### 5.8 观测与评估层
 
-- Phoenix OTLP HTTP endpoint http://localhost:6006/v1/traces, SQLite 位于 traces/phoenix.sqlite。
+- Phoenix OTLP HTTP endpoint http://localhost:6006/v1/traces,SQLite 位于 traces/phoenix.sqlite。
 - eval_join 读 golden_tds.yaml 与 Phoenix span,输出 hit@1、hit@5、MRR 并按语言对拆分。
 - golden_tds_mine 扫 git log,匹配 commit message 中 TD-XXXX 正则,交集 tree-sitter 函数区间得出 `{td_id: [qname,...]}`。
 
